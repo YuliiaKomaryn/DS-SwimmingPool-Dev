@@ -35,12 +35,12 @@ public final class SwimmingStuffController {
         return ResponseEntity.ok(swimmingStuffService.save(newSwimmingStuff));
     }
 
-    @GetMapping("{swimmingstuffId}")
+    @GetMapping("/{swimmingstuffId}")
     public ResponseEntity<SwimmingStuff> show(@PathVariable String swimmingstuffId) throws NotFoundException {
         return ResponseEntity.ok(swimmingStuffService.getById(swimmingstuffId));
     }
 
-    @DeleteMapping("{swimmingstuffId}")
+    @DeleteMapping("/{swimmingstuffId}")
     public ResponseEntity<Void> delete(@PathVariable String swimmingstuffId) throws NotFoundException {
         swimmingStuffService.deleteById(swimmingstuffId);
         return ResponseEntity.noContent().build();

@@ -31,8 +31,7 @@ public final class PassController {
     @PostMapping
     public ResponseEntity<Pass> create(@RequestBody PassPayload payload) {
         Pass newPass = new Pass(payload.getType(),
-                payload.getPrice(),
-                payload.getExpireDate());
+                payload.getPrice());
         return ResponseEntity.ok(purchaseService.save(newPass));
     }
 

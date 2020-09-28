@@ -18,14 +18,11 @@ public class Pass {
     private String pass_id;
     String type;
     int price;
-    LocalDate expireDate;
 
     public Pass(String type,
-                  int price,
-                  LocalDate expireDate) {
+                  int price) {
         this.type = type;
         this.price = price;
-        this.expireDate = expireDate;
         this.pass_id = UUID.randomUUID().toString();
     }
 
@@ -45,8 +42,5 @@ public class Pass {
         return price;
     }
 
-    public LocalDate getExpireDate() {
-        return expireDate;
-    }
 }
 
